@@ -2,7 +2,6 @@ module red_vs_blue::lootboxes;
 
 use sui::random::{Self, Random};
 use red_vs_blue::artifacts;
-use red_vs_blue::junk;
 
 public fun buy_lootbox(r: &Random, ctx: &mut TxContext): Option<artifacts::Artifact> {
   let mut generator = random::new_generator(r, ctx); // generator is a PRG
@@ -14,4 +13,3 @@ public fun buy_lootbox(r: &Random, ctx: &mut TxContext): Option<artifacts::Artif
     option::none()
   }
 }
-
