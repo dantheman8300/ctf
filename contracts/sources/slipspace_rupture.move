@@ -7,7 +7,6 @@ use red_vs_blue::artifacts;
 public struct Rupture has key {
   id: UID,
   next_rupture_timestamp_seconds: u64, 
-
 }
 
 const ENoRuptureOpen: u64 = 0;
