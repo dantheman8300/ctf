@@ -12,7 +12,7 @@ public enum Lootbox {
   }
 }
 
-entry fun buy_lootbox(payment_coin: Coin<USDC>, r: &Random, ctx: &mut TxContext) {
+public entry fun buy_lootbox(payment_coin: Coin<USDC>, r: &Random, ctx: &mut TxContext) {
   let mut generator = random::new_generator(r, ctx); // generator is a PRG
   let random_value = generator.generate_u8_in_range(1, 100);
 
