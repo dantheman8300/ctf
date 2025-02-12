@@ -87,7 +87,7 @@ The forerunner database is a globally shared object that holds thousands of spec
 Open lootboxes until you get an flag. 
 
 ### Instructions
-1. Examine the [`lootbox.move`](./contracts/sources/lootbox.move) contract carefully
+1. Examine the [`lootboxes.move`](./contracts/sources/lootboxes.move) contract carefully
 2. Create new lootboxes until you get an flag.
 
 ### Hints
