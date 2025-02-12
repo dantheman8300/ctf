@@ -62,13 +62,13 @@ This merchant is selling flags for some native USDC. Buy an flag.
 
 ### Instructions
 1. Examine the [`merchant.move`](./contracts/sources/merchant.move) contract carefully.
-2. Find the price of an flag.
-3. Get some testnet USDC.
+2. Get some testnet USDC.
+3. Find the price of an flag.
 4. Buy an flag.
 
 ### Hints
-1. The merchant is using a fixed price for the flag.
-2. Use this [page](https://sui.io/usdc#start-building) to learn how to get testnet USDC.
+1. Use this [page](https://sui.io/usdc#start-building) to learn how to get testnet USDC.
+2. The merchant is using a fixed price for the flag.
 
 ## Forerunner Database Challenge
 The forerunner database is a globally shared object that holds thousands of special items including some flags. Locate the database object and extract the flag. 
