@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "setup": "ts-node src/setup.ts",
     "start": "ts-node src/index.ts"
   },
   "dependencies": {

@@ -1,3 +1,7 @@
+# ignore solution files
+scripts/src/solutions/*
+
+
 # Logs
 logs
 *.log

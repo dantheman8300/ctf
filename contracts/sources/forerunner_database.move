@@ -2,14 +2,10 @@ module red_vs_blue::forerunner_database;
 
 use std::string::String;
 use sui::dynamic_object_field;
-
-use red_vs_blue::artifacts;
+use red_vs_blue::flag;
 use red_vs_blue::junk;
-public struct ForerunnerDatabase has key {
-  id: UID,
-}
 
-public struct DatabaseAdminCap has key, store {
+public struct ForerunnerDatabase has key {
   id: UID,
 }
 
@@ -18,14 +14,9 @@ fun init(ctx: &mut TxContext) {
     id: object::new(ctx),
   };
   transfer::share_object(db);
-
-  let cap = DatabaseAdminCap {
-    id: object::new(ctx),
-  };
-  transfer::transfer(cap, ctx.sender());
 }
 
-public fun load(_: & DatabaseAdminCap, db: &mut ForerunnerDatabase, keys: vector<String>, fills: vector<u64>, ctx: &mut TxContext) {
+public fun load(db: &mut ForerunnerDatabase, keys: vector<String>, fills: vector<u64>, ctx: &mut TxContext) {
   assert!(keys.length() == fills.length(), 0);
 
   let mut keys = keys;
@@ -39,13 +30,12 @@ public fun load(_: & DatabaseAdminCap, db: &mut ForerunnerDatabase, keys: vector
       let junk = junk::new(ctx);
       dynamic_object_field::add(&mut db.id, key, junk);
     } else {
-      let artifact = artifacts::new(key, ctx);
-      dynamic_object_field::add(&mut db.id, key, artifact);
+      let flag = flag::new(key, ctx);
+      dynamic_object_field::add(&mut db.id, key, flag);
     };
   };
 }
 
 public fun extract<Item: key + store>(db: &mut ForerunnerDatabase, key: String): Item {
-  let item = dynamic_object_field::remove(&mut db.id, key);
-  item
+  dynamic_object_field::remove(&mut db.id, key)
 }

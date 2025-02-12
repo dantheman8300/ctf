@@ -1,12 +1,12 @@
 module red_vs_blue::piggy_bank;
 
-use sui::bag;
+use sui::bag::{Self, Bag};
 use sui::coin::{Coin, CoinMetadata};
-use red_vs_blue::artifacts;
+use red_vs_blue::flag;
 
 public struct PiggyBank has key {
   id: UID,
-  bag: bag::Bag,
+  bag: Bag,
 }
 
 fun init(ctx: &mut TxContext) {
@@ -16,11 +16,11 @@ fun init(ctx: &mut TxContext) {
   });
 }
 
-public fun deposit<CoinType>(bank: &mut PiggyBank, coin: Coin<CoinType>, coin_metadata: &CoinMetadata<CoinType>, ctx: &mut TxContext):  artifacts::Artifact {
+public fun deposit<CoinType>(bank: &mut PiggyBank, coin: Coin<CoinType>, coin_metadata: &CoinMetadata<CoinType>, ctx: &mut TxContext): flag::Flag {
   let key = coin_metadata.get_symbol();
   bank.bag.add(key, coin);
 
-  artifacts::new(b"piggy_bank".to_string(), ctx)
+  flag::new(b"piggy_bank".to_string(), ctx)
 }
 
 
