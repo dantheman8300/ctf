@@ -1,4 +1,5 @@
 # ctf
+Welcome to the the CTF! Complete each of the challenges to extract the flags and win the CTF!
 
 ## Table of Contents 
 - [Setup](#setup)
