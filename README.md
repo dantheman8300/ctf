@@ -19,7 +19,7 @@ Welcome to the the CTF! Complete each of the challenges to extract the flags and
 
 ## Resources
 
-- Deployed package address: ``
+- Deployed package address: `0x11012a893c18e9445968460f8f9b249f6db0ac88e0b31abb382ecbe177da2f02`
 - Sui Explorer: [https://suiscan.xyz/testnet/home](https://suiscan.xyz/testnet/home)
 - Sui Faucet: [https://faucet.sui.io/](https://faucet.sui.io/) OR [Discord faucet](https://discord.gg/cKx75xrRMq)
 - Sui Docs: [https://docs.sui.io/](https://docs.sui.io/)
