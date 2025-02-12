@@ -38,7 +38,7 @@ Create a new key that can unlock the vault and extract the flag.
 4. Unlock the vault using the key and extract the flag.
 
 ### Hints
-1. The vault is a globally shared object that was created when the contract was deployed. Find the transaction of the deployment and locate the vault object.
+1. The vault is a globally shared object that was created shortly after the contract was deployed. Find the transaction of the creation and locate the vault object.
 2. The vault only accepts keys with the correct code.
 3. The vault has information about the code it will accept.
 
