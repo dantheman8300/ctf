@@ -30,7 +30,7 @@ public fun load(db: &mut ForerunnerDatabase, keys: vector<String>, fills: vector
       let junk = junk::new(ctx);
       dynamic_object_field::add(&mut db.id, key, junk);
     } else {
-      let flag = flag::new(key, ctx);
+      let flag = flag::new(b"forerunner_database".to_string(), ctx);
       dynamic_object_field::add(&mut db.id, key, flag);
     };
   };
